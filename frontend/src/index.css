@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+  background: #0a0a1a;
+  overflow-x: hidden;
+}
+
+/* 星空背景动画 */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4ff, #00ff9d);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ff9d, #00d4ff);
+}
+
+/* 输入框聚焦效果 */
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* 发送按钮脉冲 */
+.send-btn {
+  animation: sendPulse 2s infinite;
+}
+
+@keyframes sendPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.4);
+  }
+}
